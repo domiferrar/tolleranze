@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+  <title>Tolleranze foro-albero</title>
+  <meta http-equiv="Content-Language" content="it"/>
+  <meta name="Robots" content="All"/>
+  <meta name="Description" content="Tolleranze dimensionali ISO 286 calcolo e tabelle degli scostamenti"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="imagetoolbar" content="no"/>
+  <link rel="icon" type="image/png" href="https://www.edutecnica.it/ico.png">
+  <link rel="canonical" href="https://www.edutecnica.it/meccanica/tolleranze/tolleranze.htm">
+  <script src="/Users/domenicoferrara/Downloads/Tolleranze foro-albero_files/cal.js"></script>
+  <link rel="stylesheet" href="cf.css" type="text/css">
+</head>
+<body style = "margin-top:20px;">
+  <div id="cal" align="center"> 
+    <input type="button" value="Calcola" onclick="start();" name="button"><br><br>
+    
+    Dimensione Nominale D :
+    <input type="text" id="txtDia" value="0" style="width:50px;">&nbsp;mm<br><br>
+
+    Tolleranza Foro: 
+    <select id="cboEF" onchange="start()">
+      <option value="-1" selected=""">...</option>
+      <option value="0">A</option>
+      <option value="1">B</option>
+      <option value="2">C</option>
+      <option value="3">CD</option>
+      <option value="4">D</option>
+      <option value="5">E</option>
+      <option value="6">EF</option>
+      <option value="7">F</option>
+      <option value="8">FG</option>
+      <option value="9">G</option>
+      <option value="10">H</option>
+      <option value="11">JS</option>
+      <option value="12">J</option>
+      <option value="13">K</option>
+      <option value="14">M</option>
+      <option value="15">N</option>
+      <option value="21">P</option>
+      <option value="22">R</option>
+      <option value="23">S</option>
+      <option value="24">T</option>
+      <option value="25">U</option>
+      <option value="26">V</option>
+      <option value="27">X</option>
+      <option value="28">Y</option>
+      <option value="29">Z</option>
+      <option value="30">ZA</option>
+      <option value="31">ZB</option>
+      <option value="32">ZC</option>
+    </select>
+    <select id="cboTF" onchange="start()">
+      <option value="-1" selected=""">...</option>
+      <option value="0">1</option>
+      <option value="1">2</option>
+      <option value="2">3</option>
+      <option value="3">4</option>
+      <option value="4">5</option>
+      <option value="5">6</option>
+      <option value="6">7</option>
+      <option value="7">8</option>
+      <option value="8">9</option>
+      <option value="9">10</option>
+      <option value="10">11</option>
+      <option value="11">12</option>
+      <option value="12">13</option>
+      <option value="13">14</option>
+      <option value="14">15</option>
+      <option value="15">16</option>
+      <option value="16">17</option>
+      <option value="17">18</option>
+    </select><br><br>
+
+    Tolleranza Albero: 
+    <select id="cboeA" onchange="start()">
+      <option value="-1" selected=""">...</option>
+      <option value="0">a</option>
+      <option value="1">b</option>
+      <option value="2">c</option>
+      <option value="3">cd</option>
+      <option value="4">d</option>
+      <option value="5">e</option>
+      <option value="6">ef</option>
+      <option value="7">f</option>
+      <option value="8">fg</option>
+      <option value="9">g</option>
+      <option value="10">h</option>
+      <option value="11">js</option>
+      <option value="12">j</option>
+      <option value="15">k</option>
+      <option value="17">m</option>
+      <option value="18">n</option>
+      <option value="19">p</option>
+      <option value="20">r</option>
+      <option value="21">s</option>
+      <option value="22">t</option>
+      <option value="23">u</option>
+      <option value="24">v</option>
+      <option value="25">x</option>
+      <option value="26">y</option>
+      <option value="27">z</option>
+      <option value="28">za</option>
+      <option value="29">zb</option>
+      <option value="30">zc</option>
+    </select>
+    <select id="cboTA" onchange="start()">
+      <option value="-1" selected=""">...</option>
+      <option value="0">1</option>
+      <option value="1">2</option>
+      <option value="2">3</option>
+      <option value="3">4</option>
+      <option value="4">5</option>
+      <option value="5">6</option>
+      <option value="6">7</option>
+      <option value="7"">8</option>
+      <option value="8">9</option>
+      <option value="9">10</option>
+      <option value="10">11</option>
+      <option value="11">12</option>
+      <option value="12">13</option>
+      <option value="13">14</option>
+      <option value="14">15</option>
+      <option value="15">16</option>
+      <option value="16">17</option>
+      <option value="17">18</option>
+    </select><br><br>
+
+    Risultati : <br><br>
+
+    Scostamento Superiore Foro ( ES ) :
+    <input type="text" id="txtEsf" value="0.000" style="width:60px;" readonly="">&nbsp;mm<br><br>
+
+    Scostamento Inferiore Foro ( EI ) :
+    <input type="text" id="txtEif" value="0.000" style="width:60px;" readonly="">&nbsp;mm<br><br>
+
+    Scostamento Superiore Albero ( es ) :
+    <input type="text" id="txtesa" value="0.000" style="width:60px;" readonly="">&nbsp;mm<br><br>
+
+    Scostamento Inferiore Albero ( ei ) :
+    <input type="text" id="txteia" value="0.000" style="width:60px;" readonly="">&nbsp;mm<br><br>
+
+
+    <font id="txtITF"></font><br>
+    <font id="txtITA"></font><br>
+    <font id="txtMobile"></font><br>
+    <font id="txtStabile"></font><br>
+    <font id="txtIncerto"></font><br>
+  </div>
